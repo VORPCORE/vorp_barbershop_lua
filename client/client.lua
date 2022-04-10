@@ -26,12 +26,13 @@ end)
 AddEventHandler('menuapi:closemenu', function()
     FreezeEntityPosition(PlayerPedId(), false)
     ClearPedTasks(PlayerPedId())
+    Citizen.InvokeNative(0xD3A7B003ED343FD9, PlayerPedId(), orghair,true, true, true)
+    if IsPedMale(PlayerPedId()) then
+        Citizen.InvokeNative(0xD3A7B003ED343FD9, PlayerPedId(), orgbeard,true, true, true)
+    end
+    Citizen.InvokeNative(0xCC8CA3E88256E58F, PlayerPedId(), 0, 1, 1, 1, 0)
     Wait(5000)
     inmenu = false 
-    -- apply hair 
-    Citizen.InvokeNative(0xD3A7B003ED343FD9, PlayerPedId(), orghair,true, true, true)
-    Citizen.InvokeNative(0xD3A7B003ED343FD9, PlayerPedId(), orgbeard,true, true, true)
-    Citizen.InvokeNative(0xCC8CA3E88256E58F, PlayerPedId(), 0, 1, 1, 1, 0)
 end)
 local availablehairmale = {}
 local availablehairfemale = {}
@@ -74,7 +75,9 @@ RegisterNetEvent('vorp_barbershop:recinfo')
 AddEventHandler('vorp_barbershop:recinfo', function(skininfo)
     skininfoz = json.decode(skininfo)
     orghair = skininfoz.Hair
-    orgbeard = skininfoz.Beard
+    if IsPedMale(PlayerPedId()) then
+        orgbeard = skininfoz.Beard
+    end
     waitresult = false 
 end)
 
@@ -82,9 +85,12 @@ RegisterNetEvent('vorp_barbershop:apply')
 AddEventHandler('vorp_barbershop:apply', function(paid)
     if paid then 
         orghair = activehair
-        
+        orgbeard = activebeard
     end
     Citizen.InvokeNative(0xD3A7B003ED343FD9, PlayerPedId(), activehair,true, true, true)
+    if IsPedMale(PlayerPedId()) then
+        Citizen.InvokeNative(0xD3A7B003ED343FD9, PlayerPedId(), orgbeard,true, true, true)
+    end
     Citizen.InvokeNative(0xCC8CA3E88256E58F, PlayerPedId(), 0, 1, 1, 1, 0)
 end)
 
