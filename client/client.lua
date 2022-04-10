@@ -91,9 +91,11 @@ end)
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
+        local sleep = true 
         local coords = GetEntityCoords(PlayerPedId())
         for k,v in pairs(Config.locations) do 
-            if GetDistanceBetweenCoords(coords, v.pos.x, v.pos.y, v.pos.z, true) < v.radius and not inmenu and not IsPedDeadOrDying(PlayerPedId()) then                
+            if GetDistanceBetweenCoords(coords, v.pos.x, v.pos.y, v.pos.z, true) < v.radius and not inmenu and not IsPedDeadOrDying(PlayerPedId()) then       
+                sleep = false          
                 local label  = CreateVarString(10, 'LITERAL_STRING', language.barbershop)
                 PromptSetActiveGroupThisFrame(prompts, label)
                 if Citizen.InvokeNative(0xC92AC953F0A982AE,openmenu) then
@@ -125,6 +127,9 @@ Citizen.CreateThread(function()
                     openbarbermenu()
                 end
             end
+        end
+        if sleep then 
+            Wait(500)
         end
     end
 end)
