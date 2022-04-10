@@ -9,25 +9,6 @@ end)
 VorpInv = exports.vorp_inventory:vorp_inventoryApi()
 
 
-RegisterCommand(Config.admincommandheight, function(source, args)
-    local _source = source
-    local User = VorpCore.getUser(_source)
-    local group = User.getGroup
-    if group == "admin" then
-        local _source = source 
-        if VorpCore.getUser(args[1]) ~= nil then 
-            local newcomps = {}
-            Scale = args[2] + 0.0
-            if Config.maxscale >= scale and Scale >= Config.minscale then 
-                newcomps["Scale"] = Scale
-                local newcompsjson = json.encode(newcomps)
-                TriggerEvent("vorpcharacter:setPlayerSkinChange", args[1], newcompsjson)
-            else
-                print("too big / too small")
-            end
-        end
-    end
-end)
 
 
 RegisterServerEvent('vorp_barbershop:getinfo')

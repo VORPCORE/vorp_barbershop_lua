@@ -13,9 +13,6 @@ Config.keys = {
 
 }
 
-Config.admincommandheight = "scale" -- admin command to change height
-Config.maxscale = 1.5
-Config.minscale = 0.8
 
 
 Config.locations = { 
