@@ -1,15 +1,8 @@
-
-
-
-
 TriggerEvent("getCore",function(core)
     VorpCore = core
 end)
 
 VorpInv = exports.vorp_inventory:vorp_inventoryApi()
-
-
-
 
 RegisterServerEvent('vorp_barbershop:getinfo')
 AddEventHandler('vorp_barbershop:getinfo', function()
@@ -34,7 +27,7 @@ AddEventHandler('vorp_barbershop:payforservice', function(amount,hair,beard)
     if (cash - amount) >= 0 then 
         Character.removeCurrency(0, amount)
         paid = true 
-        TriggerClientEvent("vorp:TipRight", _source, language.youpaid..amount, 10000) 
+        TriggerClientEvent("vorp:TipRight", _source, _U('youpaid')..amount, 10000) 
         local newcomps = {}
         if beard ~= nil then 
             newcomps["Beard"] = beard
@@ -43,7 +36,7 @@ AddEventHandler('vorp_barbershop:payforservice', function(amount,hair,beard)
         local newcompsjson = json.encode(newcomps)
         TriggerEvent("vorpcharacter:setPlayerSkinChange", _source, newcompsjson)
     else
-        TriggerClientEvent("vorp:TipRight", _source, language.nomoney, 10000) 
+        TriggerClientEvent("vorp:TipRight", _source, _U('nomoney'), 10000) 
     end
     TriggerClientEvent("vorp_barbershop:apply",_source,paid)
 end)

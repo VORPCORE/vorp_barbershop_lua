@@ -1,19 +1,17 @@
 Config = {}
 
+Config.defaultlang = "it_lang"
+
 Config.keys = {
-    ["G"] = 0x760A9C6F,
-    ["F"] = 0xB2F377E8,
-	["BACKSPACE"] = 0x156F7119,
-    ["ENTER"] = 0xC7B5340A,
-	["E"] = 0xCEFD9220,
+    	["G"] = 0x760A9C6F,
+    	["F"] = 0xB2F377E8,
+    	["BACKSPACE"] = 0x156F7119,
+    	["ENTER"] = 0xC7B5340A,
+    	["E"] = 0xCEFD9220,
 	["SHIFT"] = 0x8FFC75D6,
 	["LALT"] = 0x8AAA0AD4,
 	["B"] = 0x4CC0E2FE,
-
-
 }
-
-
 
 Config.locations = { 
 	blackwater = { 
@@ -58,18 +56,4 @@ Config.locations = {
 		price = 10,
 		radius = 1.5,
 	},
-}
-
-
-language = {
-	openmenu = "Open Menu",
-	barbershop = "Barbershop",
-	hair = "Hair",
-	hair2 = "Style Your Hair",
-	beard = "Beard",
-	beard2 = "Style Your Beard",
-	confirm = "Confirm Selection",
-	confirm2 = "Price $",
-	youpaid = "Paid $",
-	nomoney = "Not Enough Cash",
 }

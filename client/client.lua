@@ -39,7 +39,7 @@ local availablehairfemale = {}
 local availablebeards = {}
 Citizen.CreateThread(function()
     Citizen.Wait(1000)
-    local str = language.openmenu
+    local str = _U('openmenu')
 	openmenu = PromptRegisterBegin()
 	PromptSetControlAction(openmenu, Config.keys["G"])
 	str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -65,7 +65,7 @@ Citizen.CreateThread(function()
         local blip = N_0x554d9d53f696d002(1664425300, v.pos.x, v.pos.y, v.pos.z)
         SetBlipSprite(blip, -2090472724, 1)
         SetBlipScale(blip, 0.8)
-        Citizen.InvokeNative(0x9CB1A1623062F402, blip, language.barbershop)
+        Citizen.InvokeNative(0x9CB1A1623062F402, blip, _U('barbershop'))
         table.insert(blips,blip)
     end
 
@@ -102,7 +102,7 @@ Citizen.CreateThread(function()
         for k,v in pairs(Config.locations) do 
             if GetDistanceBetweenCoords(coords, v.pos.x, v.pos.y, v.pos.z, true) < v.radius and not inmenu and not IsPedDeadOrDying(PlayerPedId()) then       
                 sleep = false          
-                local label  = CreateVarString(10, 'LITERAL_STRING', language.barbershop)
+                local label  = CreateVarString(10, 'LITERAL_STRING', _U('barbershop'))
                 PromptSetActiveGroupThisFrame(prompts, label)
                 if Citizen.InvokeNative(0xC92AC953F0A982AE,openmenu) then
                     inmenu = true 
@@ -165,7 +165,7 @@ function openbarbermenu()
         if beardselection == nil then 
             beardselection = 0
         end
-        table.insert(elements,{label = language.beard,tag = "beard", value = beardselection  ,desc = language.beard2 , type = "slider" , min =0 , max =keysx(availablebeards), hop= 1})
+        table.insert(elements,{label = _U('beard'),tag = "beard", value = beardselection  ,desc = _U('beard2') , type = "slider" , min =0 , max =keysx(availablebeards), hop= 1})
     else
         hairtable = availablehairfemale
     end
@@ -177,11 +177,11 @@ function openbarbermenu()
     if hairselection == nil then 
         hairselection = 0 
     end
-    table.insert(elements,{label = language.hair,tag = "hair", value = hairselection  ,desc = language.hair2 , type = "slider" , min =0 , max =keysx(hairtable), hop= 1})
-    table.insert(elements,{label = language.confirm, tag = 'confirm' , desc = language.confirm2..activebarber.price})
+    table.insert(elements,{label = _U('hair'),tag = "hair", value = hairselection  ,desc = _U('hair2') , type = "slider" , min =0 , max =keysx(hairtable), hop= 1})
+    table.insert(elements,{label = _U('confirm'), tag = 'confirm' , desc = _U('confirm2') ..activebarber.price})
    MenuData.Open('default', GetCurrentResourceName(), 'menuapi',
 	{
-		title    = language.barbershop,
+		title    =  _U('barbershop'),
 		subtext    = "",
 		align    = 'top-left',
 		elements = elements,
@@ -224,4 +224,3 @@ function openbarbermenu()
 		menu.close()
 	end)
 end
-
