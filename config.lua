@@ -17,43 +17,43 @@ Config.locations = {
 	blackwater = { 
 		blip = true,
 		pos = {x = -814.915,y = -1367.89,z = 43.75},
-		price = 2,
+		price = 10,
 		radius = 2.0,
 	},
 	valentine = { 
 		blip = true,
-		pos = {x = -306.61,y = 813.56,z = 117.97},
-		price = 2,
-		radius = 1.0, -- careful with this
+		pos = {x = -307.51,y = 813.96,z = 118.99},
+		price = 10,
+		radius = 1.5, -- careful with this
 	},
 	saintdenis = { 
 		blip = true,
 		pos = {x = 2655.21,y = -1179.9,z = 53.27},
-		price = 2,
+		price = 10,
 		radius = 2.0,
 	},
 	annsberg = { 
 		blip = true,
 		pos = {x = 2924.3,y = 1343.7,z = 44.4},
-		price = 2,
+		price = 10,
 		radius = 1.5,
 	},
 	armadillo = { 
 		blip = true,
 		pos = {x = -3684.22,y = -2621.05,z = -13.44},
-		price = 2,
+		price = 10,
 		radius = 1.5,
 	},
 	tumbleweed = { 
 		blip = true,
 		pos = {x = -5493.4,y = -2940.7,z = -0.46},
-		price = 2,
+		price = 10,
 		radius = 1.5,
 	},
 	strawberry = { 
 		blip = true,
 		pos = {x = -1810.92,y = -372.15,z = 162.89},
-		price = 2,
+		price = 10,
 		radius = 1.5,
 	},
 }
