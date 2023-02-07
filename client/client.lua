@@ -23,17 +23,6 @@ AddEventHandler("onResourceStop",function(resourceName)
     end
 end)
 
-AddEventHandler('menuapi:closemenu', function()
-    FreezeEntityPosition(PlayerPedId(), false)
-    ClearPedTasks(PlayerPedId())
-    Citizen.InvokeNative(0xD3A7B003ED343FD9, PlayerPedId(), orghair,true, true, true)
-    if IsPedMale(PlayerPedId()) then
-        Citizen.InvokeNative(0xD3A7B003ED343FD9, PlayerPedId(), orgbeard,true, true, true)
-    end
-    Citizen.InvokeNative(0xCC8CA3E88256E58F, PlayerPedId(), 0, 1, 1, 1, 0)
-    Wait(5000)
-    inmenu = false 
-end)
 local availablehairmale = {}
 local availablehairfemale = {}
 local availablebeards = {}
@@ -216,12 +205,26 @@ function openbarbermenu()
             FreezeEntityPosition(PlayerPedId(), false)
             ClearPedTasks(PlayerPedId())
             MenuData.CloseAll()
+            Citizen.InvokeNative(0xD3A7B003ED343FD9, PlayerPedId(), orghair,true, true, true)
+            if IsPedMale(PlayerPedId()) then
+                Citizen.InvokeNative(0xD3A7B003ED343FD9, PlayerPedId(), orgbeard,true, true, true)
+            end
+            Citizen.InvokeNative(0xCC8CA3E88256E58F, PlayerPedId(), 0, 1, 1, 1, 0)
             Wait(2000)
             inmenu = false 
         end
 	end,
 	function(data, menu)
-		menu.close()
+        menu.close()
+        FreezeEntityPosition(PlayerPedId(), false)
+        ClearPedTasks(PlayerPedId())
+        Citizen.InvokeNative(0xD3A7B003ED343FD9, PlayerPedId(), orghair,true, true, true)
+        if IsPedMale(PlayerPedId()) then
+            Citizen.InvokeNative(0xD3A7B003ED343FD9, PlayerPedId(), orgbeard,true, true, true)
+        end
+        Citizen.InvokeNative(0xCC8CA3E88256E58F, PlayerPedId(), 0, 1, 1, 1, 0)
+        Wait(5000)
+        inmenu = false 
+		
 	end)
 end
-
