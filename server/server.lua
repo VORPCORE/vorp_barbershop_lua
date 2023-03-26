@@ -40,8 +40,8 @@ AddEventHandler('vorp_barbershop:payforservice', function(amount,hair,beard)
             newcomps["Beard"] = beard
         end
         newcomps["Hair"] = hair
-        local newcompsjson = json.encode(newcomps)
-        TriggerClientEvent("vorpcharacter:updateCache", _source, false,newcompsjson)
+        local newskinjson = json.encode(newcomps)
+        TriggerClientEvent("vorpcharacter:savenew", _source, false, newskinjson)
     else
         TriggerClientEvent("vorp:TipRight", _source, language.nomoney, 10000) 
     end
