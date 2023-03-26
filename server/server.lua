@@ -41,7 +41,7 @@ AddEventHandler('vorp_barbershop:payforservice', function(amount,hair,beard)
         end
         newcomps["Hair"] = hair
         local newcompsjson = json.encode(newcomps)
-        TriggerEvent("vorpcharacter:setPlayerSkinChange", _source, newcompsjson)
+        TriggerClientEvent("vorpcharacter:updateCache", _source, false,newcompsjson)
     else
         TriggerClientEvent("vorp:TipRight", _source, language.nomoney, 10000) 
     end
