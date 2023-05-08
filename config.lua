@@ -1,5 +1,7 @@
 Config = {}
 
+Lang = "English"
+
 Config.keys = {
     ["G"] = 0x760A9C6F,
     ["F"] = 0xB2F377E8,
@@ -12,8 +14,6 @@ Config.keys = {
 
 
 }
-
-
 
 Config.locations = { 
 	blackwater = { 
@@ -58,18 +58,4 @@ Config.locations = {
 		price = 10,
 		radius = 1.5,
 	},
-}
-
-
-language = {
-	openmenu = "Open Menu",
-	barbershop = "Barbershop",
-	hair = "Hair",
-	hair2 = "Style Your Hair",
-	beard = "Beard",
-	beard2 = "Style Your Beard",
-	confirm = "Confirm Selection",
-	confirm2 = "Price $",
-	youpaid = "Paid $",
-	nomoney = "Not Enough Cash",
 }
