@@ -2,7 +2,7 @@ Translation = {}
 
 Translation.Langs = {
     English = {
-        openmenu = "Open Menu",
+        openmenu = "Change Look",
         barbershop = "Barbershop",
         hair = "Hair",
         hair2 = "Style Your Hair",
@@ -14,7 +14,7 @@ Translation.Langs = {
         nomoney = "Not Enough Cash",
     },
     Portugues_PT = {
-        openmenu = "Abrir Menu",
+        openmenu = "Mudar Visual",
         barbershop = "Barbearia",
         hair = "Cabelo",
         hair2 = "Estilize Seu Cabelo",
@@ -26,7 +26,7 @@ Translation.Langs = {
         nomoney = "Dinheiro Insuficiente",
     },
     Portugues_BR = {
-        openmenu = "Abrir Menu",
+        openmenu = "Mudar Visual",
         barbershop = "Barbearia",
         hair = "Cabelo",
         hair2 = "Estilize Seu Cabelo",
@@ -38,7 +38,7 @@ Translation.Langs = {
         nomoney = "Dinheiro Insuficiente",
     },
     Francais = {
-        openmenu = "Ouvrir le menu",
+        openmenu = "Changer d'apparence",
         barbershop = "Barbier",
         hair = "Cheveux",
         hair2 = "Coiffer vos cheveux",
@@ -50,7 +50,7 @@ Translation.Langs = {
         nomoney = "Pas assez d'argent",
     },
     German = {
-        openmenu = "Menü öffnen",
+        openmenu = "Aussehen ändern",
         barbershop = "Barbershop",
         hair = "Haare",
         hair2 = "Style deine Haare",
@@ -62,7 +62,7 @@ Translation.Langs = {
         nomoney = "Nicht genug Bargeld",
     },
     Espanol = {
-        openmenu = "Abrir Menú",
+        openmenu = "Cambiar aspecto",
         barbershop = "Barbería",
         hair = "Cabello",
         hair2 = "Estilo de Cabello",
