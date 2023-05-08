@@ -14,11 +14,11 @@ AddEventHandler('vorp_barbershop:getinfo', function()
     local u_charid = Character.charIdentifier
     exports.ghmattimysql:execute('SELECT skinPlayer FROM characters WHERE charidentifier = @charidentifier',
         { ['charidentifier'] = u_charid }, function(result)
-        if result[1] ~= nil then
-            skin = result[1].skinPlayer
-            TriggerClientEvent("vorp_barbershop:recinfo", _source, skin)
-        end
-    end)
+            if result[1] ~= nil then
+                skin = result[1].skinPlayer
+                TriggerClientEvent("vorp_barbershop:recinfo", _source, skin)
+            end
+        end)
 end)
 
 RegisterServerEvent('vorp_barbershop:payforservice')
@@ -39,6 +39,7 @@ AddEventHandler('vorp_barbershop:payforservice', function(amount, hair, beard)
         local newskinjson = json.encode(newcomps)
         TriggerClientEvent("vorpcharacter:savenew", _source, false, newskinjson)
     else
+        ExecuteCommand("rc")
         TriggerClientEvent("vorp:TipRight", _source, T.nomoney, 10000)
     end
     TriggerClientEvent("vorp_barbershop:apply", _source, paid)

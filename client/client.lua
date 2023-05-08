@@ -157,8 +157,16 @@ function openbarbermenu()
             beardselection = 0
         end
         table.insert(elements,
-            { label = T.beard, tag = "beard", value = beardselection, desc = T.beard2, type = "slider",
-                min = 0, max = keysx(availablebeards), hop = 1 })
+            {
+                label = T.beard,
+                tag = "beard",
+                value = beardselection,
+                desc = T.beard2,
+                type = "slider",
+                min = 0,
+                max = keysx(availablebeards),
+                hop = 1
+            })
     else
         hairtable = availablehairfemale
     end
@@ -171,8 +179,16 @@ function openbarbermenu()
         hairselection = 0
     end
     table.insert(elements,
-        { label = T.hair, tag = "hair", value = hairselection, desc = T.hair2, type = "slider", min = 0,
-            max = keysx(hairtable), hop = 1 })
+        {
+            label = T.hair,
+            tag = "hair",
+            value = hairselection,
+            desc = T.hair2,
+            type = "slider",
+            min = 0,
+            max = keysx(hairtable),
+            hop = 1
+        })
     table.insert(elements, { label = T.confirm, tag = 'confirm', desc = T.confirm2 .. activebarber.price })
     MenuData.Open('default', GetCurrentResourceName(), 'menuapi',
         {
