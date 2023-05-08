@@ -11,7 +11,6 @@ local blips = {}
 
 T = Translation.Langs[Lang]
 
-
 TriggerEvent("menuapi:getData", function(call)
     MenuData = call
 end)
