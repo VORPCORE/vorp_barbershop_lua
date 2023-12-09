@@ -22,12 +22,12 @@ Core.Callback.Register("vorp_barbershop:payforservice", function(source, cb, dat
     local cash = Character.money
 
     if cash < data.amount then
-        Core.NotifyTipRight(_source, T.nomoney, 10000)
+        Core.NotifyRightTip(_source, T.nomoney, 10000)
         return cb(false)
     end
 
     Character.removeCurrency(0, data.amount)
-    Core.NotifyTipRight(_source, T.youpaid .. data.amount, 10000)
+    Core.NotifyRightTipt(_source, T.youpaid .. data.amount, 10000)
 
     local newcomps = {}
     if data.beard ~= nil then
